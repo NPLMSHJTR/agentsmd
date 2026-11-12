@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentsmd"
+version = "0.1.0"
+description = "Generate and verify AGENTS.md against what the repository actually does."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "NPLMSHJTR" }]
+keywords = ["agents-md", "codex", "cursor", "claude-code", "ai-agents"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+]
+dependencies = []
+
+[project.scripts]
+agentsmd = "agentsmd.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/NPLMSHJTR/agentsmd"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
